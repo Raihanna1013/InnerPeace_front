@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Jadwalkansesi">
+
+    <ImageButton
+        android:id="@+id/button_kembali"
+        android:layout_width="31dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/Componen6"
+        android:src="@drawable/back"
+        android:textColor="@color/Primary1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textjadwalkan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/Componen6"
+        android:text="Jadwal Psikolog"
+        android:textColor="@color/Primary1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/button_kembali"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/detail_dokter"
+        android:layout_width="350dp"
+        android:layout_height="116dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.297"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textjadwalkan">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="351dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/foto_dokter"
+                android:layout_width="102dp"
+                android:layout_height="111dp"
+                android:src="@drawable/foto_psikolog"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/nama_dokter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Dr.Annisa"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.196"
+                app:layout_constraintStart_toEndOf="@+id/foto_dokter"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/keahlian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Ahli Psikologi Keluarga"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.201"
+                app:layout_constraintStart_toEndOf="@+id/foto_dokter"
+                app:layout_constraintTop_toBottomOf="@+id/nama_dokter" />
+
+            <ImageView
+                android:id="@+id/pengalaman"
+                android:layout_width="50dp"
+                android:layout_height="14dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/pengalaman"
+                app:layout_constraintStart_toEndOf="@+id/foto_dokter"
+                app:layout_constraintTop_toBottomOf="@+id/keahlian" />
+
+            <ImageView
+                android:id="@+id/rating"
+                android:layout_width="50dp"
+                android:layout_height="14dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/pengalaman"
+                app:layout_constraintStart_toEndOf="@+id/pengalaman"
+                app:layout_constraintTop_toBottomOf="@+id/keahlian" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/jadwal_psikolog"
+        android:layout_width="178dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="Jadwal Tersedia"
+        android:textColor="@color/Primary1"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_dokter" />
+
+    <TextView
+        android:id="@+id/jadwal_tersedia"
+        android:layout_width="178dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="Jadwal Tersedia"
+        android:textColor="@color/Primary1"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_dokter" />
+
+    <HorizontalScrollView
+        android:id="@+id/jadwal"
+        android:layout_width="338dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:fillViewport="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jadwal_tersedia">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="98dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/button_bg_color"
+                android:backgroundTint="@color/Componen6"
+                android:text="Selasa
+                28Oktober"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="98dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/styleround"
+                android:backgroundTint="#FFFFFF"
+                android:text="Selasa
+                28Oktober"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="98dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/styleround"
+                android:backgroundTint="#FFFFFF"
+                android:text="Selasa
+                28Oktober"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="98dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/styleround"
+                android:backgroundTint="#FFFFFF"
+                android:text="Selasa
+                28Oktober"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="98dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/styleround"
+                android:backgroundTint="#FFFFFF"
+                android:text="Selasa
+                28Oktober"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/hari_psikolog"
+        android:layout_width="178dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="28dp"
+        android:text="Jam Tersedia"
+        android:textColor="@color/Primary1"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jadwal" />
+
+    <HorizontalScrollView
+        android:id="@+id/jam"
+        android:layout_width="338dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:fillViewport="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hari_psikolog">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/hari1"
+                android:layout_width="98dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/styleround"
+                android:backgroundTint="#FFFFFF"
+                android:text="16.00 WIB"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/hari2"
+                android:layout_width="98dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/styleround"
+                android:backgroundTint="#FFFFFF"
+                android:text="16.00 WIB"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/hari3"
+                android:layout_width="98dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/styleround"
+                android:backgroundTint="#FFFFFF"
+                android:text="16.00 WIB"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/hari4"
+                android:layout_width="98dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/styleround"
+                android:backgroundTint="#FFFFFF"
+                android:text="16.00 WIB"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/hari5"
+                android:layout_width="98dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/styleround"
+                android:backgroundTint="#FFFFFF"
+                android:text="16.00 WIB"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <Button
+        android:id="@+id/booking_jadwal"
+        android:layout_width="337dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="96dp"
+        android:backgroundTint="@color/Primary1"
+        android:text="Booking Jadwal"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.434"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/jam" />
+</androidx.constraintlayout.widget.ConstraintLayout>

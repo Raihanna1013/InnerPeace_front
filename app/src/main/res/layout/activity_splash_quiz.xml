@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashQuiz">
+
+    <TextView
+        android:id="@+id/wellcometext"
+        android:layout_width="351dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="180dp"
+        android:text="Sudah Siap?"
+        android:textAlignment="center"
+        android:textColor="@color/Primary1"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/wellcome"
+        android:layout_width="351dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="52dp"
+        android:text="Test ini hanya membuktikan kondisi yang kamu alami saat ini saja, bukan berarti kamu sungguh mengidap gejala yang muncul."
+        android:textAlignment="center"
+        android:textColor="@color/Primary1"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wellcometext" />
+
+    <Button
+        android:id="@+id/mulai"
+        android:layout_width="334dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="@color/Primary1"
+        android:text="Berikutnya"
+        android:textColor="@color/Primary2"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.61"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wellcome" />
+</androidx.constraintlayout.widget.ConstraintLayout>
