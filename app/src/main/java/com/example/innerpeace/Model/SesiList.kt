@@ -1,4 +1,4 @@
-package com.example.innerpeace
+package com.example.innerpeace.Model
 
 import java.time.DateTimeException
 import java.util.Date

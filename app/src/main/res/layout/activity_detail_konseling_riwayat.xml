@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Pembayaran">
+    tools:context=".DetailKonselingRiwayat">
+
     <ImageButton
         android:id="@+id/button_kembali"
         android:layout_width="31dp"
@@ -14,7 +15,7 @@
         android:backgroundTint="@color/Componen6"
         android:src="@drawable/back"
         android:textColor="@color/Primary1"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.078"
@@ -22,29 +23,43 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textPembayaran"
+        android:id="@+id/txtDetailKonseling"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/Componen6"
-        android:text="Pembayaran"
+        android:text="Detail Riwayat Konseling"
         android:textColor="@color/Primary1"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/button_kembali"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textDokter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Dokter"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDetailKonseling" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/detail_dokter"
         android:layout_width="350dp"
         android:layout_height="116dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginStart="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.297"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPembayaran">
+        app:layout_constraintTop_toBottomOf="@+id/textDokter">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="351dp"
@@ -54,6 +69,7 @@
                 android:id="@+id/foto_dokter"
                 android:layout_width="102dp"
                 android:layout_height="111dp"
+
                 android:src="@drawable/foto_psikolog"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +79,7 @@
                 android:id="@+id/nama_dokter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="5dp"
                 android:text="Dr.Annisa"
                 android:textSize="28sp"
                 android:textStyle="bold"
@@ -104,22 +120,33 @@
                 app:layout_constraintStart_toEndOf="@+id/pengalaman"
                 app:layout_constraintTop_toBottomOf="@+id/keahlian" />
 
+            <ImageView
+                android:id="@+id/statusselesai"
+                android:layout_width="55dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/sesiselesai"
+                app:layout_constraintStart_toEndOf="@+id/foto_dokter"
+                app:layout_constraintTop_toBottomOf="@+id/pengalaman" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
+
     <TextView
-        android:id="@+id/jadwal_tersedia"
-        android:layout_width="178dp"
-        android:layout_height="23dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="Jadwal Konseling"
-        android:textSize="16sp"
-        android:textStyle="bold"
+        android:id="@+id/textJadwalKonseling"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Sesi Konseling"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detail_dokter" />
 
     <LinearLayout
-        android:id="@+id/jadwal"
+        android:id="@+id/sesi_jadwal"
         android:layout_width="302dp"
         android:layout_height="25dp"
         android:layout_marginStart="28dp"
@@ -127,7 +154,7 @@
         android:gravity="center_vertical"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jadwal_tersedia">
+        app:layout_constraintTop_toBottomOf="@+id/textJadwalKonseling">
 
         <ImageView
             android:layout_width="24dp"
@@ -136,6 +163,7 @@
             android:src="@drawable/ic_time" />
 
         <TextView
+            android:id="@+id/textjam"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="16.00  "
@@ -151,144 +179,96 @@
             android:src="@drawable/ic_calendar" />
 
         <TextView
+            android:id="@+id/texttanggal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Selasa, 26 Oktober 2024"
             android:textColor="#3A4446"
             android:textSize="14sp"
             android:textStyle="bold"/>
-
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textRincian"
+        android:id="@+id/textHasilDiagnosalabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="20dp"
-        android:text="Rincian Pembayaran"
+        android:text="Hasil Diagnosa"
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jadwal" />
-
-    <LinearLayout
-
-        android:layout_width="348dp"
-        android:layout_height="109dp"
-        android:layout_marginTop="8dp"
-        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textRincian">
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/rincian3"
-            android:layout_width="348dp"
-            android:layout_height="34dp"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/textRincian"
-            tools:layout_editor_absoluteX="30dp">
-
-            <TextView
-                android:id="@+id/konsultasi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Sesi Konsultasi"
-                android:textColor="#808080"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="150.000"
-                android:textColor="#000000"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/rincian2"
-            android:layout_width="348dp"
-            android:layout_height="34dp"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/textRincian"
-            tools:layout_editor_absoluteX="30dp">
-
-            <TextView
-                android:id="@+id/admin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Biaya Admin"
-                android:textColor="#808080"
-                android:textSize="14sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/harga2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:text="0"
-                android:textColor="#000000"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.533" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/rincian1"
-            android:layout_width="348dp"
-            android:layout_height="34dp"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/textRincian"
-            tools:layout_editor_absoluteX="30dp">
-
-            <TextView
-                android:id="@+id/textTotal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="Total Harga"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/HargaTotal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="150.000"
-                android:textColor="#000000"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </LinearLayout>
-    <Button
-        android:layout_width="350dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="212dp"
-        android:backgroundTint="@color/Primary1"
-        android:text="Bayar Sekarang"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sesi_jadwal" />
+    <TextView
+        android:id="@+id/diagnosa"
+        android:layout_width="366dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:text="Lorem ipsum dolor sit amet consectetur. Sed fames vel odio pellentesque aliquam facilisis hac interdum..."
+        android:textColor="#666666"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.692"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textHasilDiagnosalabel"/>
 
+    <TextView
+        android:id="@+id/textResepObatlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Resep Obat"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/diagnosa" />
+    <TextView
+        android:id="@+id/tv_obat"
+        android:layout_width="337dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:text="Lorem ipsum dolor sit amet consectetur. Sed fames vel odio pellentesque aliquam facilisis hac interdum..."
+        android:textColor="#666666"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.214"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textResepObatlabel" />
+    <TextView
+        android:id="@+id/textAnjuranlabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Anjuran kegiatan"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_obat" />
+
+    <TextView
+        android:id="@+id/tv_anjuran"
+        android:layout_width="337dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:text="Lorem ipsum dolor sit amet consectetur. Sed fames vel odio pellentesque aliquam facilisis hac interdum..."
+        android:textColor="#666666"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.214"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textAnjuranlabel" />
 </androidx.constraintlayout.widget.ConstraintLayout>

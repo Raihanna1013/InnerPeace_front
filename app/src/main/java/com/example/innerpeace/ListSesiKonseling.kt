@@ -4,6 +4,8 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.innerpeace.Adapter.SesiAdapter
+import com.example.innerpeace.Model.SesiList
 import com.example.innerpeace.databinding.ActivityListSesiKonselingBinding
 import java.util.Calendar
 
@@ -34,6 +36,9 @@ class ListSesiKonseling : AppCompatActivity() {
 
         // Atur RecyclerView
         binding.rvRiwayatkonseling.layoutManager = LinearLayoutManager(this)
-        binding.rvRiwayatkonseling.adapter = SesiAdapter(ItemRiwayat)
+        binding.rvRiwayatkonseling.adapter = SesiAdapter(this, ItemRiwayat)
+        binding.rvRiwayatkonseling.setHasFixedSize(true)
+
+
     }
 }
